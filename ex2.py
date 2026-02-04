@@ -1,18 +1,23 @@
-#Simple Calculator with Python
+#*****************Simple Calculator with Python**************************************
 
-# Simple calculator program with history feature
+#================Simple calculator program with history feature=====================
 calculation_history = []
 
-#functions for arithmatic operations
+#==================functions for arithmatic operations=======================
 
+#-----------------Addition-------------------------
 def add(a,b):
   return a+b
-  
+
+#-------------------Subtraction-----------------------
 def subtract(a,b):
   return a-b
+
+#--------------Multiplication--------------------------
 def multiply (a,b):
   return a*b
 
+#---------------Division-----------------------------
 def divide(a,b):
   try:
     return a/b
@@ -20,11 +25,12 @@ def divide(a,b):
     print(e)
 def power(a,b):
   return a**b
-  
+
+#-----------------------Modulor-------------------------------
 def remainder(a,b):
   return a%b
   
-# Function to display history
+#================Function to display history===================
 
 def history():
   if calculation_history:  # if list not empty
@@ -33,11 +39,13 @@ def history():
   else:
     print("No past calculations to show")
 
- #select option function   
+ #================select option function=================================== 
   
 def select_op(choice):
+  
   if (choice == '#'):
     return -1
+    
   elif (choice == '$'):
     return 0
     
@@ -95,7 +103,7 @@ def select_op(choice):
     last_calculation =  "{0} {1} {2} = {3}".format(num1, choice, num2, result) 
     print(last_calculation )
 
-    # save calculation in history
+    #=================save calculation in history=======================
     calculation_history.append(last_calculation)
     
   else:
@@ -113,10 +121,11 @@ while True:
   print("8.Reset    : $ ")
   print("8.History  : ? ")
   
-  # take input from the user
+  #===========take input from the user==================================
   choice = input("Enter choice(+,-,*,/,^,%,#,$,?): ")
   print(choice)
   if(select_op(choice) == -1):
     #program ends here
     print("Done. Terminating")
+
     exit()
